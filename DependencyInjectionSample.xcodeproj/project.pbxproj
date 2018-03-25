@@ -16,6 +16,7 @@
 		B6B2143B206793D800AFF653 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2143A206793D800AFF653 /* Presenter.swift */; };
 		B6B2143D2067951F00AFF653 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2143C2067951F00AFF653 /* Model.swift */; };
 		B6B2143F2067998000AFF653 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2143E2067998000AFF653 /* Repository.swift */; };
+		B6B214412067A72500AFF653 /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B214402067A72500AFF653 /* PresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		B6B2143A206793D800AFF653 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		B6B2143C2067951F00AFF653 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B6B2143E2067998000AFF653 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		B6B214402067A72500AFF653 /* PresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				B6B2142F2067828F00AFF653 /* ViewControllerTests.swift */,
+				B6B214402067A72500AFF653 /* PresenterTests.swift */,
 				B6B214312067828F00AFF653 /* Info.plist */,
 			);
 			path = DependencyInjectionSampleTests;
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6B214412067A72500AFF653 /* PresenterTests.swift in Sources */,
 				B6B214302067828F00AFF653 /* ViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
