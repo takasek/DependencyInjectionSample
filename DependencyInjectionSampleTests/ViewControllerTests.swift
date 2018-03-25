@@ -1,5 +1,5 @@
 //
-//  DependencyInjectionSampleTests.swift
+//  ViewControllerTests.swift
 //  DependencyInjectionSampleTests
 //
 //  Created by Yoshitaka Seki on 2018/03/25.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import DependencyInjectionSample
 
-class DependencyInjectionSampleTests: XCTestCase {
+class ViewControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -21,16 +21,12 @@ class DependencyInjectionSampleTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_ViewControllerの初回表示時にlastが空でnowが現時刻() {
+        let window = UIWindow()
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+
+        XCTAssertEqual(vc.label.text, "last: --\nnow: x:xx:xx")
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
