@@ -20,16 +20,11 @@ protocol UseCaseDelegate {
 final class UseCase {
     var delegate: UseCaseDelegate?
 
+    private let dateRepository = DateRepository()
     private(set) var item: Item?
 
     func load() {
-        let lastDate: Date?
-        let lastTimeIntervalSince1970 = UserDefaults.standard.double(forKey: "lastTimeIntervalSince1970")
-        if lastTimeIntervalSince1970 != 0 {
-            lastDate = Date(timeIntervalSince1970: lastTimeIntervalSince1970)
-        } else {
-            lastDate = nil
-        }
+        let lastDate = dateRepository.fetchLastDate()
         let now = Date()
 
         item = Item(lastDate: lastDate, now: now)
@@ -44,6 +39,6 @@ final class UseCase {
             assertionFailure("itemまだロードされてない")
             return
         }
-        UserDefaults.standard.set(now.timeIntervalSince1970, forKey: "lastTimeIntervalSince1970")
+        dateRepository.saveCurrentDate(now)
     }
 }
