@@ -12,34 +12,25 @@ protocol PresenterDelegate: class {
     func presenterDidReceiveItem(_ presenter: Presenter)
 }
 
-final class Presenter {
-    struct Item {
-        let lastDate: Date?
-        let now: Date
-    }
-    private var item: Item?
-
+final class Presenter: UseCaseDelegate {
+    let useCase: UseCase
     weak var delegate: PresenterDelegate?
 
+    init() {
+        useCase = UseCase()
+        useCase.delegate = self
+    }
+
     func load() {
-        let lastDate: Date?
-        let lastTimeIntervalSince1970 = UserDefaults.standard.double(forKey: "lastTimeIntervalSince1970")
-        if lastTimeIntervalSince1970 != 0 {
-            lastDate = Date(timeIntervalSince1970: lastTimeIntervalSince1970)
-        } else {
-            lastDate = nil
-        }
-        let now = Date()
+        useCase.load()
+    }
 
-        item = Item(lastDate: lastDate, now: now)
-
+    func useCaseDidLoad(_ useCase: UseCase) {
         delegate?.presenterDidReceiveItem(self)
-
-        saveCurrentDate()
     }
 
     var timeDescription: String? {
-        guard let item = item else { return nil }
+        guard let item = useCase.item else { return nil }
 
         let f = DateFormatter()
         f.setLocalizedDateFormatFromTemplate("kHms")
@@ -49,13 +40,5 @@ final class Presenter {
             item.lastDate.flatMap(f.string(from:)) ?? "--",
             f.string(from: item.now)
         )
-    }
-
-    func saveCurrentDate() {
-        guard let now = item?.now else {
-            assertionFailure("itemまだロードされてない")
-            return
-        }
-        UserDefaults.standard.set(now.timeIntervalSince1970, forKey: "lastTimeIntervalSince1970")
     }
 }
