@@ -17,12 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        (window!.rootViewController as! ViewController).presenter
-            = Presenter(dependency: .init(
-                useCase: UseCase(dependency: .init(
-                    dateRepository: DateRepositoryImpl(),
-                    now: Date()
-                ))))
+        let repository = DateRepositoryImpl()
+
+        let useCase = UseCase(dependency: .init(
+            dateRepository: repository,
+            now: Date()
+            ))
+
+        let presenter = Presenter(dependency: .init(
+            useCase: useCase
+            ))
+
+        (window!.rootViewController as! ViewController).presenter = presenter
 
         return true
     }

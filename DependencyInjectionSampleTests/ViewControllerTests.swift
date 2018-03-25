@@ -28,15 +28,20 @@ class ViewControllerTests: XCTestCase {
         ).date!
 
     func test_ViewControllerの初回表示時にlastが空でnowが現時刻() {
-        let window = UIWindow()
+        let repository = MockDateRepositoryImpl(
+            lastDate: nil
+        )
+        let useCase = UseCase(dependency: .init(
+            dateRepository: repository,
+            now: 📅
+            ))
+        let presenter = Presenter(dependency: .init(
+            useCase: useCase
+            ))
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
+        vc.presenter = presenter
 
-        vc.presenter = Presenter(dependency: .init(
-            useCase: UseCase(dependency: .init(
-                dateRepository: MockDateRepositoryImpl(lastDate: nil),
-                now: 📅
-                ))))
-
+        let window = UIWindow()
         window.rootViewController = vc
         window.makeKeyAndVisible()
 

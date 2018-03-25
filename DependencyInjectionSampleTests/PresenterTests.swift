@@ -28,11 +28,16 @@ class PresenterTests: XCTestCase {
         ).date!
 
     func test_Presenterのloadが正しく行われる() {
+        let repository = MockDateRepositoryImpl(
+            lastDate: nil
+        )
+        let useCase = UseCase(dependency: .init(
+            dateRepository: repository,
+            now: 📅
+            ))
         let presenter = Presenter(dependency: .init(
-            useCase: UseCase(dependency: .init(
-                dateRepository: MockDateRepositoryImpl(lastDate: nil),
-                now: 📅
-                ))))
+            useCase: useCase
+            ))
 
         XCTAssertNil(presenter.timeDescription)
 
