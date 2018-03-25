@@ -13,11 +13,15 @@ protocol PresenterDelegate: class {
 }
 
 final class Presenter: UseCaseDelegate {
+    struct Dependency {
+        let useCase: UseCase
+    }
+
     let useCase: UseCase
     weak var delegate: PresenterDelegate?
 
-    init() {
-        useCase = UseCase()
+    init(dependency: Dependency) {
+        useCase = dependency.useCase
         useCase.delegate = self
     }
 

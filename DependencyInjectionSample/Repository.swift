@@ -8,7 +8,12 @@
 
 import Foundation
 
-final class DateRepository {
+protocol DateRepositoryProtocol {
+    func fetchLastDate() -> Date?
+    mutating func saveCurrentDate(_ now: Date)
+}
+
+final class DateRepositoryImpl: DateRepositoryProtocol {
     func fetchLastDate() -> Date? {
         let lastTimeIntervalSince1970 = UserDefaults.standard.double(forKey: "lastTimeIntervalSince1970")
         if lastTimeIntervalSince1970 != 0 {
@@ -19,5 +24,20 @@ final class DateRepository {
     }
     func saveCurrentDate(_ now: Date) {
         UserDefaults.standard.set(now.timeIntervalSince1970, forKey: "lastTimeIntervalSince1970")
+    }
+}
+
+struct MockDateRepositoryImpl: DateRepositoryProtocol {
+    private(set) var lastDate: Date?
+
+    init(lastDate: Date?) {
+        self.lastDate = lastDate
+    }
+
+    func fetchLastDate() -> Date? {
+        return lastDate
+    }
+    mutating func saveCurrentDate(_ now: Date) {
+        lastDate = now
     }
 }

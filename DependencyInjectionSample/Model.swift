@@ -18,14 +18,24 @@ protocol UseCaseDelegate {
 }
 
 final class UseCase {
+    struct Dependency {
+        let dateRepository: DateRepositoryProtocol
+        let now: Date
+    }
+
     var delegate: UseCaseDelegate?
 
-    private let dateRepository = DateRepository()
+    private var dateRepository: DateRepositoryProtocol
+    private let now: Date
     private(set) var item: Item?
+
+    init(dependency: Dependency) {
+        self.dateRepository = dependency.dateRepository
+        self.now = dependency.now
+    }
 
     func load() {
         let lastDate = dateRepository.fetchLastDate()
-        let now = Date()
 
         item = Item(lastDate: lastDate, now: now)
 

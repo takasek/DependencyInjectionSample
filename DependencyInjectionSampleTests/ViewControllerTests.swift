@@ -21,12 +21,25 @@ class ViewControllerTests: XCTestCase {
         super.tearDown()
     }
     
+    let 📅 = DateComponents(
+        calendar: Calendar(identifier: .gregorian),
+        timeZone: TimeZone.current,
+        year: 1999, month: 7, day: 1, hour: 2, minute: 3, second: 4
+        ).date!
+
     func test_ViewControllerの初回表示時にlastが空でnowが現時刻() {
         let window = UIWindow()
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
+
+        vc.presenter = Presenter(dependency: .init(
+            useCase: UseCase(dependency: .init(
+                dateRepository: MockDateRepositoryImpl(lastDate: nil),
+                now: 📅
+                ))))
+
         window.rootViewController = vc
         window.makeKeyAndVisible()
 
-        XCTAssertEqual(vc.label.text, "last: --\nnow: x:xx:xx")
+        XCTAssertEqual(vc.label.text, "last: --\nnow: 2:03:04")
     }
 }

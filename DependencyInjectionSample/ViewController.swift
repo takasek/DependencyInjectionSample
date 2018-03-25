@@ -11,7 +11,7 @@ import UIKit
 final class ViewController: UIViewController, PresenterDelegate {
     @IBOutlet weak var label: UILabel!
 
-    let presenter = Presenter()
+    var presenter: Presenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
