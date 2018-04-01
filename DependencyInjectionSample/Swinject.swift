@@ -9,6 +9,8 @@
 import Swinject
 import SwinjectStoryboard
 
+// フックが発動してしまうため一旦コメントアウト
+/*
 extension SwinjectStoryboard {
     @objc class func setup() {
         defaultContainer.register(DateRepositoryProtocol.self) { _ in
@@ -37,4 +39,4 @@ extension SwinjectStoryboard {
         }
     }
 }
-
+*/
