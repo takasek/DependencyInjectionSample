@@ -7,8 +7,16 @@
 //
 
 import UIKit
-
 final class ViewController: UIViewController, PresenterDelegate {
+    struct Dependency {
+        let presenter: Presenter
+    }
+    static func makeInstance(dependency: Dependency) -> ViewController {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
+        vc.presenter = dependency.presenter
+        return vc
+    }
+
     @IBOutlet weak var label: UILabel!
 
     var presenter: Presenter!

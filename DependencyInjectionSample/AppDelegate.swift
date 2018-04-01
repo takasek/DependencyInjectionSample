@@ -10,8 +10,7 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+    let window = UIWindow()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -28,7 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             useCase: useCase
             ))
 
-        (window!.rootViewController as! ViewController).presenter = presenter
+        let vc = ViewController.makeInstance(dependency: .init(
+            presenter: presenter
+            ))
+
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
 
         return true
     }
