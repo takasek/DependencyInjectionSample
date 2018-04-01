@@ -21,6 +21,7 @@
 		B6B2143D2067951F00AFF653 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2143C2067951F00AFF653 /* Model.swift */; };
 		B6B2143F2067998000AFF653 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2143E2067998000AFF653 /* Repository.swift */; };
 		B6B214412067A72500AFF653 /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B214402067A72500AFF653 /* PresenterTests.swift */; };
+		B6F541BF20714178001CF143 /* Swinject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F541BE20714178001CF143 /* Swinject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		B6B2143C2067951F00AFF653 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B6B2143E2067998000AFF653 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		B6B214402067A72500AFF653 /* PresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
+		B6F541BE20714178001CF143 /* Swinject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swinject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		B6B214192067828F00AFF653 /* DependencyInjectionSample */ = {
 			isa = PBXGroup;
 			children = (
+				B6F541BE20714178001CF143 /* Swinject.swift */,
 				B6B2141A2067828F00AFF653 /* AppDelegate.swift */,
 				B6B2141C2067828F00AFF653 /* ViewController.swift */,
 				B6B2143A206793D800AFF653 /* Presenter.swift */,
@@ -258,6 +261,7 @@
 				B67746F3206D3E7B00F9BCF6 /* Clock.swift in Sources */,
 				B6B2143B206793D800AFF653 /* Presenter.swift in Sources */,
 				B6B2143D2067951F00AFF653 /* Model.swift in Sources */,
+				B6F541BF20714178001CF143 /* Swinject.swift in Sources */,
 				B6B2143F2067998000AFF653 /* Repository.swift in Sources */,
 				B6B2141D2067828F00AFF653 /* ViewController.swift in Sources */,
 				B6B2141B2067828F00AFF653 /* AppDelegate.swift in Sources */,

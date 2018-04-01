@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Swinject
+import SwinjectStoryboard
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,20 +18,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        let repository = DateRepositoryImpl()
+        enum Pattern {
+            case plain, swinject
+        }
+        let pattern: Pattern = .swinject
 
-        let useCase = UseCase(dependency: .init(
-            dateRepository: repository,
-            clock: SystemClock()
-            ))
+        let vc: ViewController
+        switch pattern {
+        case .plain:
+            let repository = DateRepositoryImpl()
 
-        let presenter = Presenter(dependency: .init(
-            useCase: useCase
-            ))
+            let useCase = UseCase(dependency: .init(
+                dateRepository: repository,
+                clock: SystemClock()
+                ))
 
-        let vc = ViewController.makeInstance(dependency: .init(
-            presenter: presenter
-            ))
+            let presenter = Presenter(dependency: .init(
+                useCase: useCase
+                ))
+
+            vc = ViewController.makeInstance(dependency: .init(
+                presenter: presenter
+                ))
+
+        case .swinject:
+            vc = SwinjectStoryboard.create(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
+        }
 
         window.rootViewController = vc
         window.makeKeyAndVisible()
