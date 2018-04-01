@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import DIKit
 
 protocol PresenterDelegate: class {
     func presenterDidReceiveItem(_ presenter: Presenter)
 }
 
-final class Presenter: UseCaseDelegate {
+final class Presenter: UseCaseDelegate, Injectable {
     struct Dependency {
         let useCase: UseCase
     }

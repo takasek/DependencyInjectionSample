@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import DIKit
 
 struct Item {
     let lastDate: Date?
@@ -17,7 +18,7 @@ protocol UseCaseDelegate {
     func useCaseDidLoad(_ useCase: UseCase)
 }
 
-final class UseCase {
+final class UseCase: Injectable {
     struct Dependency {
         let dateRepository: DateRepositoryProtocol
         let clock: Clock

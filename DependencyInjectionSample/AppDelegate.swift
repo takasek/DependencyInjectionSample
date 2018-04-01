@@ -14,6 +14,7 @@ import SwinjectStoryboard
 class AppDelegate: UIResponder, UIApplicationDelegate {
     let window = UIWindow()
 
+    let appResolver = AppResolverImpl()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -21,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let clock = SystemClock()
 
         enum Pattern {
-            case plain, swinject, minimumCakePattern
+            case plain, swinject, minimumCakePattern, diKit
         }
-        let pattern: Pattern = .minimumCakePattern
+        let pattern: Pattern = .diKit
 
         let vc: ViewController
         switch pattern {
@@ -48,6 +49,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         case .minimumCakePattern:
             vc = ViewControllerService(clock: clock).viewController
+
+        case .diKit:
+            vc = appResolver.resolveViewController(clock: clock)
         }
 
         window.rootViewController = vc

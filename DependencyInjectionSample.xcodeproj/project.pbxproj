@@ -21,8 +21,10 @@
 		B6B2143D2067951F00AFF653 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2143C2067951F00AFF653 /* Model.swift */; };
 		B6B2143F2067998000AFF653 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2143E2067998000AFF653 /* Repository.swift */; };
 		B6B214412067A72500AFF653 /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B214402067A72500AFF653 /* PresenterTests.swift */; };
+		B6F541BB20712B99001CF143 /* AppResolver.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F541BA20712B99001CF143 /* AppResolver.generated.swift */; };
 		B6F541BD207140F7001CF143 /* MinimalCakePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F541BC207140F7001CF143 /* MinimalCakePattern.swift */; };
 		B6F541BF20714178001CF143 /* Swinject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F541BE20714178001CF143 /* Swinject.swift */; };
+		B6F541C1207141BF001CF143 /* DIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F541C0207141BF001CF143 /* DIKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +56,10 @@
 		B6B2143C2067951F00AFF653 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B6B2143E2067998000AFF653 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		B6B214402067A72500AFF653 /* PresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
+		B6F541BA20712B99001CF143 /* AppResolver.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppResolver.generated.swift; sourceTree = "<group>"; };
 		B6F541BC207140F7001CF143 /* MinimalCakePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalCakePattern.swift; sourceTree = "<group>"; };
 		B6F541BE20714178001CF143 /* Swinject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swinject.swift; sourceTree = "<group>"; };
+		B6F541C0207141BF001CF143 /* DIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 			children = (
 				B6F541BE20714178001CF143 /* Swinject.swift */,
 				B6F541BC207140F7001CF143 /* MinimalCakePattern.swift */,
+				B6F541C0207141BF001CF143 /* DIKit.swift */,
+				B6F541BA20712B99001CF143 /* AppResolver.generated.swift */,
 				B6B2141A2067828F00AFF653 /* AppDelegate.swift */,
 				B6B2141C2067828F00AFF653 /* ViewController.swift */,
 				B6B2143A206793D800AFF653 /* Presenter.swift */,
@@ -144,6 +150,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6B214342067828F00AFF653 /* Build configuration list for PBXNativeTarget "DependencyInjectionSample" */;
 			buildPhases = (
+				B67746F1206CFE7D00F9BCF6 /* DIKitGen */,
 				B6B214132067828F00AFF653 /* Sources */,
 				B6B214142067828F00AFF653 /* Frameworks */,
 				B6B214152067828F00AFF653 /* Resources */,
@@ -254,6 +261,20 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		B67746F1206CFE7D00F9BCF6 /* DIKitGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = DIKitGen;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "dikitgen $SRCROOT/$PROJECT/ --exclude Carthage > $SRCROOT/$PROJECT/AppResolver.generated.swift";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -268,7 +289,9 @@
 				B6B2143F2067998000AFF653 /* Repository.swift in Sources */,
 				B6F541BD207140F7001CF143 /* MinimalCakePattern.swift in Sources */,
 				B6B2141D2067828F00AFF653 /* ViewController.swift in Sources */,
+				B6F541C1207141BF001CF143 /* DIKit.swift in Sources */,
 				B6B2141B2067828F00AFF653 /* AppDelegate.swift in Sources */,
+				B6F541BB20712B99001CF143 /* AppResolver.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

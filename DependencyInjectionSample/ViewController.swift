@@ -7,7 +7,9 @@
 //
 
 import UIKit
-final class ViewController: UIViewController, PresenterDelegate {
+import DIKit
+
+final class ViewController: UIViewController, PresenterDelegate, FactoryMethodInjectable {
     struct Dependency {
         let presenter: Presenter
     }
