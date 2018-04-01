@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let useCase = UseCase(dependency: .init(
             dateRepository: repository,
-            now: Date()
+            clock: SystemClock()
             ))
 
         let presenter = Presenter(dependency: .init(

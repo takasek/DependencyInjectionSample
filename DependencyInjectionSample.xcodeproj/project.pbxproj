@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B67746F3206D3E7B00F9BCF6 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67746F2206D3E7B00F9BCF6 /* Clock.swift */; };
 		B6B2141B2067828F00AFF653 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2141A2067828F00AFF653 /* AppDelegate.swift */; };
 		B6B2141D2067828F00AFF653 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2141C2067828F00AFF653 /* ViewController.swift */; };
 		B6B214202067828F00AFF653 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B2141E2067828F00AFF653 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B67746F2206D3E7B00F9BCF6 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		B6B214172067828F00AFF653 /* DependencyInjectionSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DependencyInjectionSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B2141A2067828F00AFF653 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6B2141C2067828F00AFF653 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				B6B2143A206793D800AFF653 /* Presenter.swift */,
 				B6B2143C2067951F00AFF653 /* Model.swift */,
 				B6B2143E2067998000AFF653 /* Repository.swift */,
+				B67746F2206D3E7B00F9BCF6 /* Clock.swift */,
 				B6B2141E2067828F00AFF653 /* Main.storyboard */,
 				B6B214212067828F00AFF653 /* Assets.xcassets */,
 				B6B214232067828F00AFF653 /* LaunchScreen.storyboard */,
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B67746F3206D3E7B00F9BCF6 /* Clock.swift in Sources */,
 				B6B2143B206793D800AFF653 /* Presenter.swift in Sources */,
 				B6B2143D2067951F00AFF653 /* Model.swift in Sources */,
 				B6B2143F2067998000AFF653 /* Repository.swift in Sources */,

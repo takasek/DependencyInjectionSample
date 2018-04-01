@@ -33,7 +33,7 @@ class PresenterTests: XCTestCase {
         )
         let useCase = UseCase(dependency: .init(
             dateRepository: repository,
-            now: 📅
+            clock: MockClock(now: 📅)
             ))
         let presenter = Presenter(dependency: .init(
             useCase: useCase
