@@ -9,8 +9,6 @@
 import Swinject
 import SwinjectStoryboard
 
-// フックが発動してしまうため一旦コメントアウト
-/*
 extension SwinjectStoryboard {
     @objc class func setup() {
         defaultContainer.register(DateRepositoryProtocol.self) { _ in
@@ -27,6 +25,12 @@ extension SwinjectStoryboard {
                 useCase: r.resolve(UseCase.self, argument: clock)!
                 ))
         }
+        SwinjectStoryboard.defaultContainer.register(ViewController.self) { (r: Resolver, clock: Clock) in
+            return ViewController.makeInstance(dependency: .init(
+                presenter: r.resolve(Presenter.self, argument: clock)!
+                ))
+        }
+
         // SwinjectStoryboard のすごいところ
         // StoryboardでVCが作られたタイミングでフックを掛けて プロパティ・インジェクションできる
         defaultContainer.storyboardInitCompleted(ViewController.self) { r, vc in
@@ -39,4 +43,4 @@ extension SwinjectStoryboard {
         }
     }
 }
-*/
+

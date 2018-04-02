@@ -11,6 +11,10 @@
 		B67746EF206CFE2700F9BCF6 /* SwinjectStoryboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67746EC206CFE2700F9BCF6 /* SwinjectStoryboard.framework */; };
 		B67746F0206CFE2700F9BCF6 /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67746ED206CFE2700F9BCF6 /* DIKit.framework */; };
 		B67746F3206D3E7B00F9BCF6 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67746F2206D3E7B00F9BCF6 /* Clock.swift */; };
+		B68D71E5207250140020EFCF /* SwinjectStoryboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67746EC206CFE2700F9BCF6 /* SwinjectStoryboard.framework */; };
+		B68D71E6207250140020EFCF /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67746EB206CFE2700F9BCF6 /* Swinject.framework */; };
+		B68D71E7207250140020EFCF /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67746ED206CFE2700F9BCF6 /* DIKit.framework */; };
+		B68D71E9207250F20020EFCF /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68D71E8207250F20020EFCF /* Common.swift */; };
 		B6B2141B2067828F00AFF653 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2141A2067828F00AFF653 /* AppDelegate.swift */; };
 		B6B2141D2067828F00AFF653 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2141C2067828F00AFF653 /* ViewController.swift */; };
 		B6B214202067828F00AFF653 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B2141E2067828F00AFF653 /* Main.storyboard */; };
@@ -42,6 +46,7 @@
 		B67746EC206CFE2700F9BCF6 /* SwinjectStoryboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwinjectStoryboard.framework; path = Carthage/Build/iOS/SwinjectStoryboard.framework; sourceTree = "<group>"; };
 		B67746ED206CFE2700F9BCF6 /* DIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DIKit.framework; path = Carthage/Build/iOS/DIKit.framework; sourceTree = "<group>"; };
 		B67746F2206D3E7B00F9BCF6 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		B68D71E8207250F20020EFCF /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		B6B214172067828F00AFF653 /* DependencyInjectionSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DependencyInjectionSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B2141A2067828F00AFF653 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6B2141C2067828F00AFF653 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +82,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68D71E5207250140020EFCF /* SwinjectStoryboard.framework in Frameworks */,
+				B68D71E6207250140020EFCF /* Swinject.framework in Frameworks */,
+				B68D71E7207250140020EFCF /* DIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +144,7 @@
 		B6B2142E2067828F00AFF653 /* DependencyInjectionSampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				B68D71E8207250F20020EFCF /* Common.swift */,
 				B6B2142F2067828F00AFF653 /* ViewControllerTests.swift */,
 				B6B214402067A72500AFF653 /* PresenterTests.swift */,
 				B6B214312067828F00AFF653 /* Info.plist */,
@@ -300,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6B214412067A72500AFF653 /* PresenterTests.swift in Sources */,
+				B68D71E9207250F20020EFCF /* Common.swift in Sources */,
 				B6B214302067828F00AFF653 /* ViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +496,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42U7855PYX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DependencyInjectionSampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.takasek.DependencyInjectionSampleTests;
@@ -503,6 +517,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42U7855PYX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DependencyInjectionSampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.takasek.DependencyInjectionSampleTests;

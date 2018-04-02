@@ -9,6 +9,9 @@
 import XCTest
 @testable import DependencyInjectionSample
 
+import Swinject
+import SwinjectStoryboard
+
 class ViewControllerTests: XCTestCase {
     
     override func setUp() {
@@ -47,4 +50,38 @@ class ViewControllerTests: XCTestCase {
 
         XCTAssertEqual(vc.label.text, "last: --\nnow: 2:03:04")
     }
+
+    func test_ViewControllerの初回表示時にlastが空でnowが現時刻_Swinject版() {
+        let clock = MockClock(now: 📅)
+        let vc = testContainer.resolve(ViewController.self, argument: clock as Clock)!
+
+        let window = UIWindow()
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+
+        XCTAssertEqual(vc.label.text, "last: --\nnow: 2:03:04")
+    }
+
+    func test_ViewControllerの初回表示時にlastが空でnowが現時刻_MinimalCakePattern版() {
+        let clock = MockClock(now: 📅)
+        let vc = MockViewControllerService(clock: clock).viewController
+
+        let window = UIWindow()
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+
+        XCTAssertEqual(vc.label.text, "last: --\nnow: 2:03:04")
+    }
+
+    func test_ViewControllerの初回表示時にlastが空でnowが現時刻_DIKit版() {
+        let clock = MockClock(now: 📅)
+        let vc = testResolver.resolveViewController(clock: clock)
+
+        let window = UIWindow()
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+
+        XCTAssertEqual(vc.label.text, "last: --\nnow: 2:03:04")
+    }
+
 }

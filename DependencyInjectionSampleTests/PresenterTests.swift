@@ -9,6 +9,9 @@
 import XCTest
 @testable import DependencyInjectionSample
 
+import Swinject
+import SwinjectStoryboard
+
 class PresenterTests: XCTestCase {
 
     override func setUp() {
@@ -45,4 +48,38 @@ class PresenterTests: XCTestCase {
 
         XCTAssertEqual(presenter.timeDescription, "last: --\nnow: 2:03:04")
     }
+
+    func test_Presenterのloadが正しく行われる_Swinject版() {
+        let clock = MockClock(now: 📅)
+        let presenter = testContainer.resolve(Presenter.self, argument: clock as Clock)!
+
+        XCTAssertNil(presenter.timeDescription)
+
+        presenter.load()
+
+        XCTAssertEqual(presenter.timeDescription, "last: --\nnow: 2:03:04")
+    }
+
+    func test_Presenterのloadが正しく行われる_MinimumCakePattern版() {
+        let clock = MockClock(now: 📅)
+        let presenter = MockPresenterService(clock: clock).presenter
+
+        XCTAssertNil(presenter.timeDescription)
+
+        presenter.load()
+
+        XCTAssertEqual(presenter.timeDescription, "last: --\nnow: 2:03:04")
+    }
+
+    func test_Presenterのloadが正しく行われる_DIKit版() {
+        let clock = MockClock(now: 📅)
+        let presenter = testResolver.resolvePresenter(clock: clock)
+
+        XCTAssertNil(presenter.timeDescription)
+
+        presenter.load()
+
+        XCTAssertEqual(presenter.timeDescription, "last: --\nnow: 2:03:04")
+    }
+
 }
