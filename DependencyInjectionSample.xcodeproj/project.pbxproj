@@ -26,7 +26,7 @@
 		B6B2143F2067998000AFF653 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2143E2067998000AFF653 /* Repository.swift */; };
 		B6B214412067A72500AFF653 /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B214402067A72500AFF653 /* PresenterTests.swift */; };
 		B6F541BB20712B99001CF143 /* AppResolver.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F541BA20712B99001CF143 /* AppResolver.generated.swift */; };
-		B6F541BD207140F7001CF143 /* MinimalCakePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F541BC207140F7001CF143 /* MinimalCakePattern.swift */; };
+		B6F541BD207140F7001CF143 /* MinimalCakePatternと似て非なるもの.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F541BC207140F7001CF143 /* MinimalCakePatternと似て非なるもの.swift */; };
 		B6F541BF20714178001CF143 /* Swinject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F541BE20714178001CF143 /* Swinject.swift */; };
 		B6F541C1207141BF001CF143 /* DIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F541C0207141BF001CF143 /* DIKit.swift */; };
 /* End PBXBuildFile section */
@@ -62,7 +62,7 @@
 		B6B2143E2067998000AFF653 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		B6B214402067A72500AFF653 /* PresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
 		B6F541BA20712B99001CF143 /* AppResolver.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppResolver.generated.swift; sourceTree = "<group>"; };
-		B6F541BC207140F7001CF143 /* MinimalCakePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalCakePattern.swift; sourceTree = "<group>"; };
+		B6F541BC207140F7001CF143 /* MinimalCakePatternと似て非なるもの.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MinimalCakePatternと似て非なるもの.swift"; sourceTree = "<group>"; };
 		B6F541BE20714178001CF143 /* Swinject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swinject.swift; sourceTree = "<group>"; };
 		B6F541C0207141BF001CF143 /* DIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				B6F541BE20714178001CF143 /* Swinject.swift */,
-				B6F541BC207140F7001CF143 /* MinimalCakePattern.swift */,
+				B6F541BC207140F7001CF143 /* MinimalCakePatternと似て非なるもの.swift */,
 				B6F541C0207141BF001CF143 /* DIKit.swift */,
 				B6F541BA20712B99001CF143 /* AppResolver.generated.swift */,
 				B6B2141A2067828F00AFF653 /* AppDelegate.swift */,
@@ -296,7 +296,7 @@
 				B6B2143D2067951F00AFF653 /* Model.swift in Sources */,
 				B6F541BF20714178001CF143 /* Swinject.swift in Sources */,
 				B6B2143F2067998000AFF653 /* Repository.swift in Sources */,
-				B6F541BD207140F7001CF143 /* MinimalCakePattern.swift in Sources */,
+				B6F541BD207140F7001CF143 /* MinimalCakePatternと似て非なるもの.swift in Sources */,
 				B6B2141D2067828F00AFF653 /* ViewController.swift in Sources */,
 				B6F541C1207141BF001CF143 /* DIKit.swift in Sources */,
 				B6B2141B2067828F00AFF653 /* AppDelegate.swift in Sources */,

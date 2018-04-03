@@ -62,7 +62,7 @@ class ViewControllerTests: XCTestCase {
         XCTAssertEqual(vc.label.text, "last: --\nnow: 2:03:04")
     }
 
-    func test_ViewControllerの初回表示時にlastが空でnowが現時刻_MinimalCakePattern版() {
+    func test_ViewControllerの初回表示時にlastが空でnowが現時刻_MinimalCakePatternと似て非なるもの版() {
         let clock = MockClock(now: 📅)
         let vc = MockViewControllerService(clock: clock).viewController
 

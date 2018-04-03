@@ -1,5 +1,5 @@
 //
-//  MinimalCakePattern.swift
+//  MinimalCakePatternと似て非なるもの.swift
 //  DependencyInjectionSample
 //
 //  Created by Yoshitaka Seki on 2018/04/02.

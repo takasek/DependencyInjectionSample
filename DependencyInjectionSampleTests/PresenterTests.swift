@@ -60,7 +60,7 @@ class PresenterTests: XCTestCase {
         XCTAssertEqual(presenter.timeDescription, "last: --\nnow: 2:03:04")
     }
 
-    func test_Presenterのloadが正しく行われる_MinimumCakePattern版() {
+    func test_Presenterのloadが正しく行われる_MinimumCakePatternと似て非なるもの版() {
         let clock = MockClock(now: 📅)
         let presenter = MockPresenterService(clock: clock).presenter
 

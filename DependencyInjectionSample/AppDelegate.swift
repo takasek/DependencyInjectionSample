@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let clock = SystemClock()
 
         enum Pattern {
-            case plain, swinject, minimumCakePattern, diKit
+            case plain, swinject, minimumCakePatternと似て非なるもの, diKit
         }
         let pattern: Pattern = .diKit
 
@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case .swinject:
             vc = SwinjectStoryboard.create(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
 
-        case .minimumCakePattern:
+        case .minimumCakePatternと似て非なるもの:
             vc = ViewControllerService(clock: clock).viewController
 
         case .diKit:
