@@ -4,8 +4,8 @@
 //
 
 import DIKit
-import UIKit
 import Foundation
+import UIKit
 
 extension AppResolver {
 
@@ -13,14 +13,14 @@ extension AppResolver {
         return provideDateRepository()
     }
 
-    func resolveUseCase(clock: Clock) -> UseCase {
-        let dateRepositoryProtocol = resolveDateRepositoryProtocol()
-        return UseCase(dependency: .init(dateRepository: dateRepositoryProtocol, clock: clock))
-    }
-
     func resolvePresenter(clock: Clock) -> Presenter {
         let useCase = resolveUseCase(clock: clock)
         return Presenter(dependency: .init(useCase: useCase))
+    }
+
+    func resolveUseCase(clock: Clock) -> UseCase {
+        let dateRepositoryProtocol = resolveDateRepositoryProtocol()
+        return UseCase(dependency: .init(dateRepository: dateRepositoryProtocol, clock: clock))
     }
 
     func resolveViewController(clock: Clock) -> ViewController {
