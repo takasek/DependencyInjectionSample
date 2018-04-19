@@ -30,6 +30,10 @@ class PresenterTests: XCTestCase {
         year: 1999, month: 7, day: 1, hour: 2, minute: 3, second: 4
         ).date!
 
+    // ⚠️以下のテストコードは、よくないテストの設計です！⚠️
+    // 本来はそもそもテストで依存グラフの解決をすべきではない。テスタブルにしたいのであれば、UseCaseを抽象化（protocolとして定義）し、MockUseCaseを渡すべき。
+    // 本プロジェクトの目的はDI frameworkの試用・比較であるため、その点ご容赦のうえご覧下さい。
+
     func test_Presenterのloadが正しく行われる() {
         let repository = MockDateRepositoryImpl(
             lastDate: nil

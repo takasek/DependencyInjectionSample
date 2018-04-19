@@ -30,6 +30,10 @@ class ViewControllerTests: XCTestCase {
         year: 1999, month: 7, day: 1, hour: 2, minute: 3, second: 4
         ).date!
 
+    // ⚠️以下のテストコードは、よくないテストの設計です！⚠️
+    // 本来はそもそもテストで依存グラフの解決をすべきではない。テスタブルにしたいのであれば、presenterを抽象化（protocolとして定義）し、MockPresenterを渡すべき。
+    // 本プロジェクトの目的はDI frameworkの試用・比較であるため、その点ご容赦のうえご覧下さい。
+
     func test_ViewControllerの初回表示時にlastが空でnowが現時刻() {
         let repository = MockDateRepositoryImpl(
             lastDate: nil
